@@ -24,7 +24,7 @@ if [ $_result -ne 0 ]; then
 fi
 
 # run!
-docker run -d -p 8082:80 --name $_container $_image
+docker run -d -p 8083:80 --name $_container $_image
 _result=$?
 if [ $_result -ne 0 ]; then
   echo "ERROR @ docker run"
