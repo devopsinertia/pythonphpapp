@@ -9,7 +9,9 @@
 </head>
 <body>
     <input type="button" value="Click me to see data" onclick="buttonclicked()">
+    <input type="button" value="Button added by Asjad" onclick="buttonclicked1()">
     <div id="printdata"></div>
+    <div id="printdata1"></div>
 </body>
 <script>
     function buttonclicked()
@@ -22,5 +24,16 @@
             $("#printdata").html(displaydata);
         });
     }
+    function buttonclicked1()
+    {
+        $.getJSON("getDataFromPython1.php",function(data){
+            var displaydata="";
+            data.Python.forEach(function(pythondata){
+                displaydata=displaydata+pythondata+"<br/>";
+            });
+            $("#printdata1").html(displaydata);
+        });
+    }
+
 </script>
 </html>
